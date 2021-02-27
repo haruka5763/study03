@@ -5,15 +5,35 @@
     </head>
     <body>
         <h2>eelテスト</h2>
+        <form action="" method="get" name="form1">
+        <div class="search_method">
+            CSVファイル名<input id="csv_name" type="text"><br>
+            検索ワード<input id="search_word" type="text">
+            <input id="search_button" type="submit" value="検索"><br> 
+        </div>
+        </form>
+        <div>
+            <textarea id="result" class="result_area"></textarea>
+        </div>
+
         <script type="text/javascript" src="./eel.js"></script>
-        <script>
-            search.addEventListener('click', () => {
+            <script type="text/javascript">
+            eel.expose(brank_check)
+            function brank_check(){
+            const search_word = document.getElementById('search_word')
+            const search_button = document.getElementById('search_button')
+            search_button.addEventListener('click', (e) => {
+                e.preventDefault();
+                if(search_word.value == ""){
+                    alert("検索ワードは必須です");
+                }else{
+                search_method.submit();
+                }
+            });
 
-            })
 
-            eel.expose(view_log_js)
-            function view_log_js(text){
             }
         </script>
+
     </body>
 </html>
