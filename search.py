@@ -1,6 +1,8 @@
 import pandas as pd
 import eel
 
+
+
 ### デスクトップアプリ作成課題
 def kimetsu_search(word):
     # 検索対象取得
