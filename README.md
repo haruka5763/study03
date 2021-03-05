@@ -36,3 +36,25 @@ pipでインストール後に以下コマンドを実行してみよう。
 distフォルダに実行可能フィイルが格納されます。
 顧客提供時は、このファイルを提供することでpythonのインストールは不要になります。
 `python -m eel <はじめに起動するpyファイル> <htmlのフォルダ名> --onefile`
+
+
+
+【自分メモ】
+javascriptyが処理を呼んだり呼ばれたりする流れがごちゃごちゃになっていたので整理してみた。
+ポイントは、ユーザーの操作からの処理を考えることと、それに伴い処理情報がどう流れるかということ。
+①ユーザーがアプリを起動⇒view.pyが実行ファイル
+②view.pyにより、htmlがデスクトップアプリとして呼び出される
+③ユーザーが検索エリアに文字を入力し検索をクリック
+④検索エリアの情報が発信される⇒html上の検索ボタンクリックを契機にjavascriptが実行＝入力情報がjavascriptへ
+⑤空白の場合はevent表示、そうでなければ受け取った情報を元に"検索”という処理を実行したいのでpythonへ渡す⇒実行元のview.pyへ
+⑥view.pyがその情報を元にsearch.pyを実行
+⑦search.pyは受け取った情報を元に、CSVファイル内の情報と突合し、結果を表示する。
+　更にここで、その結果をユーザーへ（htmlのtextarea）見せるために、javascriptを呼び出す（view_log_js）
+⑧search.pyは結果をcsvへ追記し、javascriptは結果をhtmlへ表示させる
+
+
+【参考サイト】
+form属性について　⇒　https://qiita.com/mikuhonda/items/f3126380d3340f3d8a2b 　
+pythonとのやりとりについて　⇒　https://qiita.com/maec_lamar/items/42162640cd8819fab663
+csvファイル名を取得　⇒　http://write-remember.com/program/javascript/input_type_file/
+pyinstaller　⇒　https://office54.net/python/python-pyinstaller
