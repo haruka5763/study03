@@ -1,7 +1,6 @@
 import pandas as pd
 import eel
-
-
+import os.path
 
 ### デスクトップアプリ作成課題
 def kimetsu_search(word, csv):
@@ -24,7 +23,8 @@ def kimetsu_search(word, csv):
             #if add_flg=="1":
             source.append(word)
         
+        csv_path = os.path.abspath("./{}".format(csv))
         # CSV書き込み
         df=pd.DataFrame(source,columns=["name"])
-        df.to_csv("./{}".format(csv),encoding="utf_8-sig")
+        df.to_csv("{}".format(csv_path),encoding="utf_8-sig")
         print(source)
