@@ -58,4 +58,4 @@ form属性について　⇒　https://qiita.com/mikuhonda/items/f3126380d3340f3
 pythonとのやりとりについて　⇒　https://qiita.com/maec_lamar/items/42162640cd8819fab663
 csvファイル名を取得　⇒　http://write-remember.com/program/javascript/input_type_file/
 pyinstaller　⇒　https://office54.net/python/python-pyinstaller
-csv保存先の指定　⇒　https://wynn-blog.com/file-operation-with-python-gui
+<!-- csv保存先の指定　⇒　https://wynn-blog.com/file-operation-with-python-gui -->
