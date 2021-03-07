@@ -11,10 +11,11 @@ search.addEventListener('click', (e) => {
         alert("CSVファイル名は必須です");        
     }else{
         eel.kimetsu_search(search_word.value, csv_name)
-        eel.expose(view_log_js)
-            function view_log_js(text){
-                result.value += text + "\n"
-            }
+    }
+
+    eel.expose(view_log_js)
+    function view_log_js(text){
+        result.value += text + "\n"
     }
 })
 
